@@ -1,5 +1,5 @@
 
-import 'package:bookly/Features/home/presentation/views/widget/best_saller_list_view.dart';
+import 'package:bookly/core/widget/best_saller_list_view.dart';
 import 'package:bookly/Features/home/presentation/views/widget/custom_appbar.dart';
 import 'package:bookly/Features/home/presentation/views/widget/feature_listview_widget.dart';
 import 'package:bookly/core/util/styles.dart';
