@@ -7,10 +7,10 @@ class SimilarListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.sizeOf(context).width*.3,
+      height: MediaQuery.sizeOf(context).width * .3,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemBuilder: (context ,index)=> const CustomBookImage(),
+        itemBuilder: (context, index) => const CustomBookImage(),
         itemCount: 10,
       ),
     );

@@ -13,7 +13,7 @@ class BestSallerItem extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: const EdgeInsets.only(right:10),
+          padding: const EdgeInsets.only(right: 10),
           child: SizedBox(
             height: 180,
             child: AspectRatio(
@@ -58,11 +58,11 @@ class BestSallerItem extends StatelessWidget {
                 children: [
                   Text(
                     '19.99\$',
-                    style:
-                        Styles.textStyle20.copyWith(fontWeight: FontWeight.w900),
-                  ) ,
-               const Spacer(),
-               const BookRating()
+                    style: Styles.textStyle20
+                        .copyWith(fontWeight: FontWeight.w900),
+                  ),
+                  const Spacer(),
+                  const BookRating()
                 ],
               ),
             ],

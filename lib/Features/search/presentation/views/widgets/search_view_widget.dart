@@ -18,12 +18,12 @@ class SearchViewWidget extends StatelessWidget {
             height: 16,
           )),
           SliverToBoxAdapter(
-              child: Text(
-                'Search Result',
-                style: Styles.textStyle18, 
+            child: Text(
+              'Search Result',
+              style: Styles.textStyle18,
             ),
           ),
-           SliverToBoxAdapter(
+          SliverToBoxAdapter(
               child: SizedBox(
             height: 16,
           )),
@@ -35,4 +35,3 @@ class SearchViewWidget extends StatelessWidget {
     );
   }
 }
-
