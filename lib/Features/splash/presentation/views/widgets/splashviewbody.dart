@@ -43,7 +43,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
   }
 
   void navigateToHome(BuildContext context) {
-    Future.delayed(const Duration(seconds: 3), () {
+    Future.delayed(const Duration(seconds: 4), () {
       // ignore: use_build_context_synchronously
       GoRouter.of(context).push('/homeView');
     });
@@ -51,9 +51,9 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   void initAnimation() {
     animationController =
-        AnimationController(vsync: this, duration: const Duration(seconds: 2));
+        AnimationController(vsync: this, duration: const Duration(seconds: 1));
     slidingAninmation =
-        Tween<Offset>(begin: const Offset(0, 7), end: Offset.zero)
+        Tween<Offset>(begin: const Offset(0, 5), end: Offset.zero)
             .animate(animationController);
     animationController.forward();
   }

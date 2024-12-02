@@ -9,6 +9,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
+  setup();
   runApp(const Bookly());
 }
 
@@ -21,10 +22,10 @@ class Bookly extends StatelessWidget {
       providers: [
         BlocProvider(
             create: (context) =>
-                FeatureBookCubit(getIt.get<HomeRepoImplementation>())),
+                FeatureBookCubit(getIt.get<HomeRepoImplementation>())..fetchFeaturedBook()),
         BlocProvider(
             create: (context) =>
-                NewestBooksCubit(getIt.get<HomeRepoImplementation>()))
+                NewestBooksCubit(getIt.get<HomeRepoImplementation>())..fetchNewestBook())
       ],
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,
