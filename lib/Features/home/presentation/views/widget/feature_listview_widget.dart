@@ -1,6 +1,5 @@
 import 'package:bookly/Features/home/presentation/view_models/feature_book_cubit/feature_book_cubit.dart';
 import 'package:bookly/Features/home/presentation/views/widget/custom_book_image.dart';
-import 'package:bookly/Features/home/presentation/views/widget/custom_book_image_shimmer.dart';
 import 'package:bookly/core/widget/custom_loading_indicator.dart';
 import 'package:bookly/core/widget/error_message_text.dart';
 import 'package:flutter/material.dart';
@@ -29,13 +28,7 @@ class FeatureListview extends StatelessWidget {
           errMessage: state.errorMessage,
         );
       } else if (state is FeatureBookLoading) {
-         return ListView.builder(
-          scrollDirection: Axis.horizontal,
-          physics:const BouncingScrollPhysics(),
-          itemCount: 5,
-          itemBuilder: (context ,index)=>const CustomBookImageShimmer(),
-        
-        );
+         return    const  CustomLoadingIndicator();
       } else {
         return const CustomLoadingIndicator();
       }
