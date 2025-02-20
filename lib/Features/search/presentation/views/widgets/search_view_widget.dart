@@ -42,11 +42,18 @@ class SearchViewWidget extends StatelessWidget {
                     ),
                   );
                 }
+                if(state is SearchSuccess && state.books.isEmpty){
+                  return const SliverToBoxAdapter(
+                    child: Text("No book found",
+                     style: Styles.textStyle16,
+                    ),
+                  );
+                }
                 if(state is SearchSuccess){
                   return SliverToBoxAdapter(
                     child:  ListView.builder(
-        shrinkWrap: true,
-        physics: const NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
         padding: EdgeInsets.zero,
         itemCount: state.books.length,
         itemBuilder: (context, index) => Padding(

@@ -6,7 +6,7 @@ import 'package:bookly/core/util/styles.dart';
 import 'package:flutter/material.dart';
 
 class BestSallerItem extends StatelessWidget {
-  final BookModel book;
+  final BookModel? book;
   const BestSallerItem({super.key, required this.book});
   
   @override
@@ -18,10 +18,10 @@ class BestSallerItem extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.only(right: 10),
-            child: CustomBookImage(imageURL: book.volumeInfo.imageLinks?.thumbnail??''
-                ),
-              ),
-      
+            child: CustomBookImage(
+              imageURL: book?.volumeInfo.imageLinks?.thumbnail ?? '',
+            ),
+          ),
           const SizedBox(
             height: 20,
           ),
@@ -32,7 +32,7 @@ class BestSallerItem extends StatelessWidget {
                 SizedBox(
                   width: MediaQuery.sizeOf(context).width * 0.5,
                   child: Text(
-                    book.volumeInfo.title!,
+                    book?.volumeInfo.title ?? 'No title available',
                     style: Styles.textStyle20.copyWith(fontFamily: kGTSectraFine),
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
@@ -41,8 +41,8 @@ class BestSallerItem extends StatelessWidget {
                 const SizedBox(
                   height: 3,
                 ),
-                 Text(
-                  book.volumeInfo.authors![0],
+                Text(
+                  book?.volumeInfo.authors?.isNotEmpty == true ? book!.volumeInfo.authors![0] : 'No author available',
                   style: Styles.textStyle14,
                   maxLines: 1,
                 ),
@@ -52,12 +52,11 @@ class BestSallerItem extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                     "Free",
-                      style: Styles.textStyle20
-                          .copyWith(fontWeight: FontWeight.w900),
+                      "Free",
+                      style: Styles.textStyle20.copyWith(fontWeight: FontWeight.w900),
                     ),
                     const Spacer(),
-                     BookRating(book: book,)
+                    BookRating(book: book!),
                   ],
                 ),
               ],
