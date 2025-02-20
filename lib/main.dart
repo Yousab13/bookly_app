@@ -1,6 +1,8 @@
 import 'package:bookly/Features/home/data/repo/home_repo_implementation.dart';
 import 'package:bookly/Features/home/presentation/view_models/feature_book_cubit/feature_book_cubit.dart';
 import 'package:bookly/Features/home/presentation/view_models/newest_book_cubit/newest_books_cubit.dart';
+import 'package:bookly/Features/search/data/repo/search_repo.dart';
+import 'package:bookly/Features/search/presentation/view_models/cubit/search_cubit.dart';
 import 'package:bookly/constance.dart';
 import 'package:bookly/core/util/approuter.dart';
 import 'package:bookly/core/util/service_locator.dart';
@@ -25,7 +27,12 @@ class Bookly extends StatelessWidget {
                 FeatureBookCubit(getIt.get<HomeRepoImplementation>())..fetchFeaturedBook()),
         BlocProvider(
             create: (context) =>
-                NewestBooksCubit(getIt.get<HomeRepoImplementation>())..fetchNewestBook())
+                NewestBooksCubit(getIt.get<HomeRepoImplementation>())..fetchNewestBook()),
+                BlocProvider(
+            create: (context) =>
+                SearchCubit(getIt.get<SearchRepoImplent>())),
+              
+              
       ],
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,

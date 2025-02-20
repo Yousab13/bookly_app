@@ -44,6 +44,7 @@ class BestSallerItem extends StatelessWidget {
                  Text(
                   book.volumeInfo.authors![0],
                   style: Styles.textStyle14,
+                  maxLines: 1,
                 ),
                 const SizedBox(
                   height: 3,

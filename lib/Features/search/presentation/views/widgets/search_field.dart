@@ -1,4 +1,6 @@
+import 'package:bookly/Features/search/presentation/view_models/cubit/search_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class SearchField extends StatelessWidget {
@@ -13,9 +15,13 @@ class SearchField extends StatelessWidget {
           FontAwesomeIcons.magnifyingGlass,
           size: 24,
         ),
+        
         enabledBorder: outlineBorder(),
         focusedBorder: outlineBorder(),
       ),
+      onChanged: (valueKey){
+       BlocProvider.of<SearchCubit>(context).fetchSearchBook(query: valueKey);
+      },
     );
   }
 
